@@ -1,0 +1,10 @@
+button {
+    border-radius: 180px;
+}
+
+li {
+    border: solid 2px black;
+    border-radius: 180px;
+    width: 20px;
+    background-color: black;
+}
