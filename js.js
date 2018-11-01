@@ -3,54 +3,80 @@ var floor = document.getElementsByClassName("floor");
 var currentFloor = 0;
 var buttonPushed = 0;
 var lastFloor;
+var isRunning = false;
 
 function OneClicked() {
-    if(buttonPushed != 0) {
-        Object.assign(floor[0].style,{backgroundColor:"yellow"});
-        buttonPushed = 0;
+    if (isRunning == true) {
+        console.log("Running");
+    } else {
+        if(buttonPushed != 0) {
+            Object.assign(floor[0].style,{backgroundColor:"yellow"});
+            buttonPushed = 0;
+        }
+        moving();
     }
-    moving();
 }
 
 function TwoClicked() {
-    if(buttonPushed != 1) {
-        Object.assign(floor[1].style,{backgroundColor:"yellow"});
-        buttonPushed = 1;
+    if (isRunning == true) {
+        console.log("Running");
+    } else {
+        if(buttonPushed != 1) {
+            Object.assign(floor[1].style,{backgroundColor:"yellow"});
+            buttonPushed = 1;
+        }
+        moving();
     }
-    moving();
 }
 
 function ThreeClicked() {
-    if(buttonPushed != 2) {
-        Object.assign(floor[2].style,{backgroundColor:"yellow"});
-        buttonPushed = 2;
+
+    if (isRunning == true) {
+        console.log("Running");
+    } else {
+        if(buttonPushed != 2) {
+            Object.assign(floor[2].style,{backgroundColor:"yellow"});
+            buttonPushed = 2;
+        }
+        moving();
     }
-    moving();
 }
 
 function FourClicked() {
-    if(buttonPushed != 3) {
-        Object.assign(floor[3].style,{backgroundColor:"yellow"});
-        buttonPushed = 3;
+
+    if (isRunning == true) {
+        console.log("Running");
+    } else {
+        if(buttonPushed != 3) {
+            Object.assign(floor[3].style,{backgroundColor:"yellow"});
+            buttonPushed = 3;
+        }
+        moving();
     }
-    moving();
 }
 
 function FiveClicked() {
+
+    if (isRunning == true) {
+        console.log("Running");
+    } else {
 
     if(buttonPushed != 4) {
         Object.assign(floor[4].style,{backgroundColor:"yellow"});
         buttonPushed = 4; 
     }    
     moving();
+    }
 }
 
 function moving() {
 
+    isRunning = true;
     var interval = setInterval(function(){
 
     if (currentFloor == buttonPushed) {
         clearInterval(interval);
+        isRunning = false;
     } else if(currentFloor <= buttonPushed) {
         currentFloor++;
         lastFloor = currentFloor;
