@@ -5,67 +5,18 @@ var buttonPushed = 0;
 var lastFloor;
 var isRunning = false;
 
-function OneClicked() {
-    if (isRunning == true) {
-        console.log("Running");
-    } else {
-        if(buttonPushed != 0) {
-            Object.assign(floor[0].style,{backgroundColor:"yellow"});
-            buttonPushed = 0;
+for (var x = 0; x < 5; x++) {
+
+    function clicked(x) {
+        if (isRunning == true) {
+            console.log("Running");
+        } else {
+            if (buttonPushed != x) {
+                Object.assign(floor[x].style, { backgroundColor: "yellow" });
+                buttonPushed = x;
+            }
+            moving();
         }
-        moving();
-    }
-}
-
-function TwoClicked() {
-    if (isRunning == true) {
-        console.log("Running");
-    } else {
-        if(buttonPushed != 1) {
-            Object.assign(floor[1].style,{backgroundColor:"yellow"});
-            buttonPushed = 1;
-        }
-        moving();
-    }
-}
-
-function ThreeClicked() {
-
-    if (isRunning == true) {
-        console.log("Running");
-    } else {
-        if(buttonPushed != 2) {
-            Object.assign(floor[2].style,{backgroundColor:"yellow"});
-            buttonPushed = 2;
-        }
-        moving();
-    }
-}
-
-function FourClicked() {
-
-    if (isRunning == true) {
-        console.log("Running");
-    } else {
-        if(buttonPushed != 3) {
-            Object.assign(floor[3].style,{backgroundColor:"yellow"});
-            buttonPushed = 3;
-        }
-        moving();
-    }
-}
-
-function FiveClicked() {
-
-    if (isRunning == true) {
-        console.log("Running");
-    } else {
-
-    if(buttonPushed != 4) {
-        Object.assign(floor[4].style,{backgroundColor:"yellow"});
-        buttonPushed = 4; 
-    }    
-    moving();
     }
 }
 
